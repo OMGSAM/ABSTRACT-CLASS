@@ -1,0 +1,71 @@
+print("Hello world")
+from abc import ABC,abstractmethod 
+class person():
+    def __init__(self,nm,ag,code) :
+        self.code=code  
+        self.nom= nm
+        self.age= ag
+    def getage(self) :
+         return self.age
+    def getnom(self) :
+         return self.nom    
+    def setnom(self , new) :
+           self.nom  =new    
+    def setage(self ,old) :
+           self.age  =old           
+    @abstractmethod
+    
+    def tostring(self):
+        pass
+    @abstractmethod
+
+    def equals(self):
+        pass
+    
+       
+class eleve(person) : 
+    def __init__(self,nm,ag,no,niveau,code) :
+      super().__init__(nm,ag,code) 
+      self.note=no
+      self.niveau=niveau
+      
+    def getniveau(self) :
+         return self.niveau 
+    def getnote(self) :
+         return self.note
+    def setniveau(self,level) :
+           self.niveau  =level       
+    def setnote(self,a) :
+           self.nom  =a   
+    def equals(self,kod) :
+      if self.code== kod :
+          return True
+      else :
+          return False       
+    def tostring(self):
+          return f"(le nom : {self.nom}  , la note est : {self.note} , le niveau : {self.niveau})"  
+
+class employe(person) :  
+    def __init__(self,nm,ag,salaire,code) :
+        super().__init__(nm,ag,code) 
+        self.salaire=salaire
+        
+    def getsalaire(self) :
+         return self.salaire    
+    def setsalaire(self,x) :
+        self.salaire =x
+    def equals(self,kod) :
+      if self.code==self.kod :
+          return True
+      else :
+          return False
+    def str(self):
+         return f"(le nom complet : {self.nom} , le age est : {self.age} , le salaire : {self.salaire} DH)"
+e=employe("amin",55,2500,22)
+print(e.str())
+a=eleve("Jilali",99,19,"S5",22)
+print(a.tostring())
+print(a.equals(e))
+         
+         
+ 
